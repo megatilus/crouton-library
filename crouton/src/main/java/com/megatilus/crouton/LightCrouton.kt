@@ -29,15 +29,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.megatilus.crouton.utils.CroutonPosition
+import com.megatilus.crouton.utils.CroutonType
 import com.megatilus.crouton.utils.CroutonDuration
 import com.megatilus.crouton.utils.CroutonGravity
 import com.megatilus.crouton.utils.CroutonResources
-import com.megatilus.crouton.utils.CroutonType
 import kotlinx.coroutines.delay
 
 /**
- * Displays a Dark Crouton based on the specified type. See [croutonType].
- * For Light Crouton, use [CroutonLight].
+ * Displays a Light Crouton based on the specified type. See [croutonType].
+ * For Dark Crouton, use [DarkCrouton].
  *
  * @param title The title of the Crouton.
  * @param showCrouton A Boolean to control the visibility of the Crouton.
@@ -52,7 +52,7 @@ import kotlinx.coroutines.delay
  * @param exitTransition The exit animation for the Crouton. By default, it uses an animation based on the [croutonGravity].
  */
 @Composable
-fun CroutonDark(
+fun LightCrouton(
     title: String,
     showCrouton: Boolean,
     onCroutonListener: (Boolean) -> Unit,
@@ -86,15 +86,13 @@ fun CroutonDark(
                 modifier = Modifier
                     .padding(horizontal = 12.dp)
                     .offset(y = CroutonPosition.getOffsetY(croutonGravity))
-                    .background(CroutonResources.getDarkColor(croutonType), RoundedCornerShape(14.dp))
+                    .background(CroutonResources.getLightColor(croutonType), RoundedCornerShape(14.dp))
                     .then(
                         if (showBorder) Modifier.border(
                             width = 1.dp,
                             color = CroutonResources.getPrimaryColor(croutonType),
-                            shape = RoundedCornerShape(14.dp)
-                        )
-                        else Modifier
-                    )
+                            shape = RoundedCornerShape(14.dp))
+                        else Modifier)
                     .padding(horizontal = 12.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -108,13 +106,13 @@ fun CroutonDark(
                     )
                 }
 
-                Column(verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.5.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.dp)) {
                     Text(text = title,
                         maxLines = 1,
                         style = TextStyle(
                             fontSize = 15.sp,
                             fontWeight = FontWeight.SemiBold,
-                            color = CroutonResources.getPrimaryColor(croutonType)
+                            color = Color(0xFF0C0C0C)
                         )
                     )
                     if (!message.isNullOrEmpty()) {
@@ -123,8 +121,8 @@ fun CroutonDark(
                             overflow = TextOverflow.Ellipsis,
                             style = TextStyle(
                                 fontSize = 14.sp,
-                                fontWeight = FontWeight.Medium,
-                                color = Color(0xFFF5F5F5),
+                                fontWeight = FontWeight.Normal,
+                                color = Color(0xFF0C0C0C),
                             )
                         )
                     }

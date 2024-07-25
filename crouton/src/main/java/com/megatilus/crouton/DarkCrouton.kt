@@ -29,14 +29,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.megatilus.crouton.utils.CroutonPosition
-import com.megatilus.crouton.utils.CroutonType
-import com.megatilus.crouton.utils.CroutonGravity
 import com.megatilus.crouton.utils.CroutonDuration
+import com.megatilus.crouton.utils.CroutonGravity
 import com.megatilus.crouton.utils.CroutonResources
+import com.megatilus.crouton.utils.CroutonType
 import kotlinx.coroutines.delay
 
 /**
- * Displays a colored Crouton based on the specified type. See [croutonType].
+ * Displays a Dark Crouton based on the specified type. See [croutonType].
+ * For Light Crouton, use [LightCrouton].
  *
  * @param title The title of the Crouton.
  * @param showCrouton A Boolean to control the visibility of the Crouton.
@@ -51,7 +52,7 @@ import kotlinx.coroutines.delay
  * @param exitTransition The exit animation for the Crouton. By default, it uses an animation based on the [croutonGravity].
  */
 @Composable
-fun ColoredCrouton(
+fun DarkCrouton(
     title: String,
     showCrouton: Boolean,
     onCroutonListener: (Boolean) -> Unit,
@@ -85,14 +86,11 @@ fun ColoredCrouton(
                 modifier = Modifier
                     .padding(horizontal = 12.dp)
                     .offset(y = CroutonPosition.getOffsetY(croutonGravity))
-                    .background(
-                        CroutonResources.getPrimaryColor(croutonType),
-                        RoundedCornerShape(14.dp)
-                    )
+                    .background(CroutonResources.getDarkColor(croutonType), RoundedCornerShape(14.dp))
                     .then(
                         if (showBorder) Modifier.border(
                             width = 1.dp,
-                            color = CroutonResources.getSecondaryColor(croutonType),
+                            color = CroutonResources.getPrimaryColor(croutonType),
                             shape = RoundedCornerShape(14.dp)
                         )
                         else Modifier
@@ -105,17 +103,18 @@ fun ColoredCrouton(
                     Icon(
                         painter = painterResource(CroutonResources.getIcon(croutonType)),
                         contentDescription = null,
-                        tint = CroutonResources.getSecondaryColor(croutonType),
+                        tint = CroutonResources.getPrimaryColor(croutonType),
                         modifier = Modifier.size(24.dp)
                     )
                 }
 
-                Column(verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.5.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.dp)) {
                     Text(text = title,
+                        maxLines = 1,
                         style = TextStyle(
                             fontSize = 15.sp,
                             fontWeight = FontWeight.SemiBold,
-                            color = Color(0xFF0C0C0C)
+                            color = CroutonResources.getPrimaryColor(croutonType)
                         )
                     )
                     if (!message.isNullOrEmpty()) {
@@ -124,8 +123,8 @@ fun ColoredCrouton(
                             overflow = TextOverflow.Ellipsis,
                             style = TextStyle(
                                 fontSize = 14.sp,
-                                fontWeight = FontWeight.Medium,
-                                color = Color(0xFF0C0C0C),
+                                fontWeight = FontWeight.Normal,
+                                color = Color(0xFFF5F5F5),
                             )
                         )
                     }

@@ -61,7 +61,7 @@ import kotlinx.coroutines.delay
  * @param exitTransition The exit animation for the Crouton. By default, it uses an animation based on the [croutonGravity].
  */
 @Composable
-fun CroutonCustom(
+fun CustomCrouton(
     title: String,
     showCrouton: Boolean,
     onCroutonListener: (Boolean) -> Unit,
@@ -100,7 +100,7 @@ fun CroutonCustom(
 
     val defaultMessageStyle = TextStyle(
         fontSize = 14.sp,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Normal,
         color = Color(0xFF0C0C0C),
     )
 
@@ -131,7 +131,7 @@ fun CroutonCustom(
                         if (!sticky) Modifier.padding(
                             horizontal = 12.dp,
                             vertical = 8.dp
-                        ) else Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
+                        ) else Modifier.padding(horizontal = 10.dp, vertical = 8.dp)
                     ),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -143,7 +143,7 @@ fun CroutonCustom(
 
                 Column(
                     modifier = if (fillMaxWidth || leadingContent != null && trailingContent != null) Modifier.weight(1f) else Modifier.wrapContentWidth(),
-                    verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.5.dp)
+                    verticalArrangement = Arrangement.spacedBy(if (message.isNullOrEmpty()) 0.dp else 2.dp)
                 ) {
                     Text(text = title,
                         maxLines = 1,

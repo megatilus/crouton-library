@@ -30,18 +30,18 @@ import com.megatilus.crouton.utils.CroutonType.Warning
  *
  * To create a custom style, use the [CroutonType.Custom] data class.
  */
-sealed class CroutonType private constructor(
-    @ColorInt  val primaryColor: Color,
-    @ColorInt val secondaryColor: Color,
-    @DrawableRes val icon: Int
+sealed class CroutonType(
+    @ColorInt internal open val primaryColor: Color,
+    @ColorInt internal open val secondaryColor: Color,
+    @DrawableRes internal open val icon: Int
 ) {
-    data object Success: CroutonType(Color(0xFFA1FF97), Color(0xFF365330), R.drawable.ic_success)
+    data object Success: CroutonType(Color(0xFF9AFF97), Color(0xFF365330), R.drawable.ic_success)
     data object Error: CroutonType(Color(0xFFFF9797), Color(0xFF533030), R.drawable.ic_error)
-    data object Warning: CroutonType(Color(0xFFFFD997), Color(0xFF534530), R.drawable.ic_warning)
+    data object Warning: CroutonType(Color(0xFFFFE597), Color(0xFF534930), R.drawable.ic_warning)
     data object Info: CroutonType(Color(0xFF97C6FF), Color(0xFF304153), R.drawable.ic_info)
     data class Custom(
-        @ColorInt private val customPrimaryColor: Color,
-        @ColorInt private val customSecondaryColor: Color,
-        @DrawableRes private val customIcon: Int
-    ): CroutonType(customPrimaryColor, customSecondaryColor, customIcon)
+        @ColorInt override val primaryColor: Color,
+        @ColorInt override val secondaryColor: Color,
+        @DrawableRes override val icon: Int
+    ): CroutonType(primaryColor, secondaryColor, icon)
 }

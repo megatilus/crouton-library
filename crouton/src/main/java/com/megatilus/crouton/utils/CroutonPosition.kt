@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-object CroutonPosition {
+internal object CroutonPosition {
     fun getOffsetY(croutonGravity: CroutonGravity): Dp {
         return when (croutonGravity) {
             CroutonGravity.TOP -> 48.dp
