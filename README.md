@@ -1,7 +1,5 @@
-
-
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/e7d3c968-52c6-42fd-a9ad-5ab4d46425e9" width="350" alt="API"/>
+    <img src="https://github.com/user-attachments/assets/31c7911a-33a6-48ed-8c3e-4ee0fbffce41" width="350" alt="Logo"/>
 </p>
 
 <p align="center">
@@ -65,10 +63,10 @@ With Crouton, you can easily customize the appearance by choosing to include or 
 - The border
 - The icon
 - Message of body
-
+- 
 |ColoredCrouton|DarkCrouton|LightCrouton|
 |-----------|-----------|-----------|
-|<img src="https://github.com/user-attachments/assets/50d105fe-e4e8-4d8e-b25d-5f6b9d31463b" width="250" alt="Gravity Bottom"/>|<img src="https://github.com/user-attachments/assets/471b3908-a981-4d56-922b-a2aa7710c86a" width="250" alt="Gravity Center"/>|<img src="https://github.com/user-attachments/assets/cfc58b08-e398-4fe5-8fa4-a9c876651e26" width="250" alt="Gravity Bottom"/>
+|<img src="https://github.com/user-attachments/assets/ecb1a10f-6ddc-4e59-8022-1b222e771075" width="250" alt="Colored Crouton"/>|<img src="https://github.com/user-attachments/assets/635c2eed-25c5-4016-be22-3f9bfe8afcb8" width="250" alt="Dark Crouton"/>|<img src="https://github.com/user-attachments/assets/82f5e5a4-f3bf-45fc-9006-0e0d605f4294" width="250" alt="Light Crouton"/>
 
 ## Installation
 Crouton is available on `mavenCentral()`
@@ -264,18 +262,18 @@ CroutonType.Custom(
     icon = R.drawable.ic_stars
 )
 ```
+
 See the difference:
 |ColoredCrouton|DarkCrouton|LightCrouton|
 |-----------|-----------|-----------|
-|<img src="https://github.com/user-attachments/assets/f6b344d8-77df-45a4-a6b6-88fb63ed4287" width="260" alt="Gravity Bottom"/>|<img src="https://github.com/user-attachments/assets/5cff092d-a92f-4a88-a9c6-2017a582d9d9" width="250" alt="Gravity Center"/>|<img src="https://github.com/user-attachments/assets/da6f4e5d-8a65-4eab-8f92-10e4c90d33f7" width="270" alt="Gravity Bottom"/>
-
+|<img src="https://github.com/user-attachments/assets/146b5229-1099-4d10-a586-1f50bf1c49d6" width="260" alt="Colored Crouton"/>|<img src="https://github.com/user-attachments/assets/9ed1c08e-beba-4bcf-b392-b5e84c096b40" width="250" alt="dark Crouton"/>|<img src="https://github.com/user-attachments/assets/0112fb91-32da-4c6e-a753-a554581ae9c2" width="270" alt="Light Crouton"/>
 
 ## Default Animations:
 Here are the default animations based on the gravity of the Crouton.
 
 |Top|Center|Bottom|
 |-----------|-----------|-----------|
-|<img src="https://github.com/user-attachments/assets/47792af5-07e1-4e33-b65b-701e43e985ff" width="250" alt="Gravity Bottom"/>|<img src="https://github.com/user-attachments/assets/34e988da-eb58-4119-a56b-bc9c5f444331" width="250" alt="Gravity Center"/>|<img src="https://github.com/user-attachments/assets/3cca629a-7c19-46a7-ba23-8fee021279af" width="250" alt="Gravity Bottom"/>
+|<img src="https://github.com/user-attachments/assets/b35bb363-8ad1-4c55-8fcb-2831f007a561" width="250" alt="Animation Bottom"/>|<img src="https://github.com/user-attachments/assets/9d92f9e9-a9e1-4fb3-b19a-fb2dde8ed102" width="250" alt="Animation Center"/>|<img src="https://github.com/user-attachments/assets/761154d5-6dc4-41e5-864f-af12a8721922" width="250" alt="Animation Bottom"/>
 
 ## Contribute
 Thank you for your interest in contributing to our project! Here’s how you can get involved:
